@@ -1,0 +1,14 @@
+{% load draw_menu %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Menus</title>
+      <link rel="stylesheet" href={% static 'tree_menu/css/menu.css' %} />
+</head>
+<body>
+{% draw_menu slug %}
+</body>
+</html>

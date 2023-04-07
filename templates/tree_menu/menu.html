@@ -1,0 +1,25 @@
+{% load index %}
+
+{% for menu in menus %}
+    <h2 class="menu_name">{{ menu.name }}</h2>
+    <div class="menu_area">
+        <ul>
+            {% for branch_id in menu.children %}
+                {% with menu.branches|index:branch_id as branch %}
+                    <li>
+                        <a href="?target={{ branch_id }}"
+                           class="{% if branch_id == target %}branch_focused{% endif %}
+                              branch_name"
+                        >
+                            {{ branch.name }}
+                        </a>
+                    </li>
+                    {% if branch_id in opened %}
+                        {% include 'tree_menu/branch.html' with branch_id=branch_id branches=menu.branches opened=opened target=target %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endfor %}

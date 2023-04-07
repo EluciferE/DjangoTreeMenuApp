@@ -1,0 +1,21 @@
+{% load index %}
+
+<ul>
+    {% with branches|index:branch_id as root_branch %}
+        {% for node_branch_id in root_branch.children %}
+            {% with branches|index:node_branch_id as node_branch %}
+                <li>
+                    <a href="?target={{ node_branch_id }}"
+                       class="{% if node_branch_id == target %}branch_focused{% endif %}
+                              branch_name"
+                    >
+                        {{ node_branch.name }}
+                    </a>
+                </li>
+                {% if node_branch_id in opened %}
+                    {% include 'tree_menu/branch.html' with branch_id=node_branch_id branches=branches opened=opened target=target %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    {% endwith %}
+</ul>

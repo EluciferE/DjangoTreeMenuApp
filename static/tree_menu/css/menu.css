@@ -1,0 +1,23 @@
+.menu_name {
+    font-size: 27px;
+}
+
+.menu_area {
+    border: solid;
+    border-radius: 10px;
+    width: fit-content;
+    padding-right: 40px;
+    margin-bottom: 50px;
+    background-color: beige;
+}
+
+.branch_name {
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Arial, serif;
+}
+
+.branch_focused {
+    font-weight: bold;
+}
