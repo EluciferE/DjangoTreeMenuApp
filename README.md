@@ -6,7 +6,7 @@ This Django app allows you to create and display tree menus on your website. The
 
 1. Clone this repository:
    ```
-   git clone https://github.com/<username>/<reponame>.git
+   git clone https://github.com/EluciferE/DjangoTreeMenuApp.git
    ```
 
 2. Install the required packages:
